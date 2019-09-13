@@ -1,12 +1,12 @@
-@extends('layouts/main')
+@extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'About')
 
 @section('container')
   <div class="container">
     <div class="row">
       <div class="col-10">
-        <h1 class="mt-3">Hello, world!</h1>
+        <h1 class="mt-3">Hello, {{$nama}}!</h1>
       </div>
     </div>
   </div>

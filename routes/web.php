@@ -18,3 +18,12 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/about', function () {
+    $nama = 'ALFIN PRIANDI';
+    return view('about', ['nama' => $nama]);
+});
+
+Route::get('/mahasiswa', function () {
+    return view('mahasiswa');
+});
