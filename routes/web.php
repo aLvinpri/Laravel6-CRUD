@@ -32,4 +32,5 @@
 // Cara menjadikan route mengakses controller untuk mengakses view atau model
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-Route::get('/mahasiswa', 'PagesController@mahasiswa');
+
+Route::get('/mahasiswa', 'MahasiswaController@index');
