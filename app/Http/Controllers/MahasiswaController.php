@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// me-load class database / DB
+// me-load class database / DB untuk membantu Query Builder
 use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
@@ -15,8 +15,11 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa = DB::table('mahasiswa')->get();
+        // 1. ambil data dengan Query Builder
+        // $mahasiswa = DB::table('students')->get();
 
+        // 2. ambil data dengan eloquent ORM
+        $mahasiswa = \App\Student::all();
         return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }
 
