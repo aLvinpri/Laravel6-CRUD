@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 
 // meload model dengan eloquent ORM
-use App\Student;
+use App\Mahasiswa;
 
 class MahasiswaController extends Controller
 {
@@ -23,7 +23,7 @@ class MahasiswaController extends Controller
         // $mahasiswa = DB::table('students')->get();
 
         // 2. ambil data dengan eloquent ORM
-        $mahasiswa = Student::all();
+        $mahasiswa = Mahasiswa::all();
         return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }
 

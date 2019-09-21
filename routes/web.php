@@ -36,3 +36,6 @@ Route::get('/about', 'PagesController@about');
 Route::get('/mahasiswa', 'MahasiswaController@index');
 
 Route::get('/students', 'StudentsController@index');
+// Attention : method create harus diatas method show !!!
+Route::get('/students/create', 'StudentsController@create');
+Route::get('/students/{student}', 'StudentsController@show');
