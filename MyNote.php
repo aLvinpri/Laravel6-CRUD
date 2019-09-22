@@ -5,6 +5,11 @@ Ketik : php artisan make:controller NamaController Parameter
 Contoh :  1. php artisan make:controller PagesController
           2. php artisan make:controller MahasiswaController --resource
 
+Cara membuat table database dengan migration laravel
+    1. Ketik : php artisan make:migration create_(namatable)_table
+    2. Buat schema/aturan di tabel baru tersebut
+    3. Ketik : php artisan make:migrate untuk membuat tabel di database
+
 Mengatasi error saat php artisan migrate
   1. buka file appServiceProvider.php
   2. tambahkan "
