@@ -38,7 +38,53 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi Laravel
+        $request->validate([
+            'nama' => 'required',
+            'nrp' => 'required|size:9',
+            'email' => 'email:rfc,dns',
+            'jurusan' => 'required'
+        ]);
+
+        /* 1. Cara input data menggunakan Request
+            $student = new Student;
+            $student->nama = $request->nama;
+            $student->nrp = $request->nrp;
+            $student->email = $request->email;
+            $student->jurusan = $request->jurusan;
+            $student->save();
+        */
+
+        /* 2. Cara input data menggunakan model (array associative)
+                Pastikan model student telah ditambahkan fillable property
+                agar laravel mengetahui field table yang mana saja yang boleh di input data
+                contoh :
+                $fillable = ['nama field', 'nama field', 'nama field',]
+
+        Student::create([
+            'nama' => $request->nama,
+            'nrp' => $request->nrp,
+            'email' => $request->email,
+            'jurusan' => $request->jurusan
+        ]);
+        */
+
+        // 3. Cara input data menggunakan model create dengan 1 baris
+        Student::create($request->all());
+        return redirect('/students')->with('status', 'Data addedd succesfully');
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'nama.required' => 'Masukan Nama Anda',
+            'nrp.required'  => 'A message is required'
+        ];
     }
 
     /**

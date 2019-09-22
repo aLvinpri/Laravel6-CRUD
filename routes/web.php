@@ -39,3 +39,5 @@ Route::get('/students', 'StudentsController@index');
 // Attention : method create harus diatas method show !!!
 Route::get('/students/create', 'StudentsController@create');
 Route::get('/students/{student}', 'StudentsController@show');
+// Route untuk tambah data menggunakan method post
+Route::post('/students', 'StudentsController@store');

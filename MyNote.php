@@ -27,4 +27,9 @@ Mengatasi error saat php artisan migrate
 
 Membuat model dengan Eloquent ORM
     1. buka terminal ketik php artisan make:model (Nama_model)
-    2. 
+        contoh php artisan make:model Student
+
+Membuat model dan controller sekaligus dan saling terhubung dengan Eloquent ORM
+    1. buka terminal ketik php artisan make:controller -r -m (Nama_model)
+        contoh : php artisan make:controller -r -m Student (tunggal)
+        controller dan model student akan langsung terhubung juga dengan table students (jamak) di database
