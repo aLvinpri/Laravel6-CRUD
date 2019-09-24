@@ -39,6 +39,11 @@ Cara membuat table database dengan migration laravel
     2. Buat schema/aturan di tabel baru tersebut
     3. Ketik : php artisan make:migrate untuk membuat tabel di database
 
+Cara menambahkan kolom di tabel database
+    1. ketik : Ketik : php artisan make:migration add_namaKolom_to_namaTabel
+    2. Buat schema $table->namaKolom();
+    3. Ketik : php artisan make:migrate
+
 Mengatasi error saat php artisan migrate
   1. buka file appServiceProvider.php
   2. tambahkan "
