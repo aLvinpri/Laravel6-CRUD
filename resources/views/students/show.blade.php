@@ -13,6 +13,13 @@
             <h6 class="card-subtitle mb-2 text-muted">{{$student->nrp}}</h6>
             <p class="card-text">{{$student->email}}</p>
             <p class="card-text">{{$student->jurusan}}</p>
+            {{-- 
+              mengarahkan a href ke form edit Bisa memakai cara ini :
+              <a href="{{url('/students/' . $student->id .'/edit')}}" class="btn btn-primary">Edit</a>
+              atau ini :
+              <a href="{{$student->id . '/edit'}}" class="btn btn-primary">Edit</a>
+              atau dibawah ini :
+            --}}
             <a href="{{$student->id}}/edit" class="btn btn-primary">Edit</a>
             <form method="post" action="{{$student->id}}" class="d-inline">
               @method('delete')
