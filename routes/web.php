@@ -30,14 +30,25 @@
 // });
 
 // Cara menjadikan route mengakses controller untuk mengakses view atau model
-Route::get('/', 'PagesController@home');
-Route::get('/about', 'PagesController@about');
+  // Route::get('/', 'PagesController@home');
+  // Route::get('/about', 'PagesController@about');
 
-Route::get('/mahasiswa', 'MahasiswaController@index');
+  // Route::get('/mahasiswa', 'MahasiswaController@index');
 
-Route::get('/students', 'StudentsController@index');
-// Attention : method create harus diatas method show !!!
-Route::get('/students/create', 'StudentsController@create');
-Route::get('/students/{student}', 'StudentsController@show');
-// Route untuk tambah data menggunakan method post
-Route::post('/students', 'StudentsController@store');
+  // Route::get('/students', 'StudentsController@index');
+  // // Attention : method create harus diatas method show !!!
+  // Route::get('/students/create', 'StudentsController@create');
+  // Route::get('/students/{student}', 'StudentsController@show');
+  // // Route untuk tambah data menggunakan method post
+  // Route::post('/students', 'StudentsController@store');
+
+  // Route::delete('/students/{student}', 'StudentsController@destroy');
+
+  // Route::get('/students/{student}/edit', 'StudentsController@edit');
+
+  // Route::put('/students/{student}', 'StudentsController@update');
+  // or Route::patch('/students/{student}', 'StudentsController@update');
+
+// Atau bisa memakai route bawaan laravel untuk semua resource di atas/standart resource
+Route::resource('students', 'StudentsController');
+
